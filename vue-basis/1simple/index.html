@@ -16,6 +16,11 @@
 
             <span @mousemove.stop="">Не изменять</span>
         </h2>
+
+        <hr>
+
+        <input type="text" @keyup.enter.space='alertValue'>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -30,6 +35,9 @@
                 handleMouseMove(e) {
                     this.x = e.clientX;
                     this.y = e.clientY;
+                },
+                alertValue(e) {
+                    alert(e.target.value);
                 }
             }
         });
