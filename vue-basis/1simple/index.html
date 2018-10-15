@@ -8,18 +8,13 @@
     
     <div id="app">
         <h2>
-            <a href="http://google.com" target="_blank" @click.prevent="">Google</a>
+            <a :href="url">Google</a>
         </h2>
 
-        <h2 @mousemove='handleMouseMove'>
-            X: {{ x }} \ Y: {{ y }}
-
-            <span @mousemove.stop="">Не изменять</span>
+        <h2>
+            Counter: {{ counter }}
         </h2>
-
-        <hr>
-
-        <input type="text" @keyup.enter.space='alertValue'>
+        <button @click="counter++">Up</button>
 
     </div>
 
@@ -28,17 +23,8 @@
         new Vue({
             el: '#app',
             data: {
-                x: 0,
-                y: 0
-            },
-            methods: {
-                handleMouseMove(e) {
-                    this.x = e.clientX;
-                    this.y = e.clientY;
-                },
-                alertValue(e) {
-                    alert(e.target.value);
-                }
+                counter: 0,
+                url: 'http://google.com'
             }
         });
     </script>
