@@ -7,32 +7,17 @@
 <body>
     
     <div id="app">
-        <h1>String: {{ name }}</h1>
-        <h2>Sum (10 + 60): {{ 10 + 60 }}</h2>
-        <h2>Number: {{ number }}</h2>
-        <h3>Method: {{ sayHello() }}</h3>
-        <h3>If statement: {{ isOk ? 'I am OK' : 'i am not OK' }}</h3>
-        <h3>Functions: {{ string.split('').reverse().join('') }}</h3>
-
-        <p> .. </p>
+        <h2>
+            <a :href="url">Google</a>
+        </h2>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         new Vue({
             el: '#app',
-
             data: {
-                name: 'Vue!',
-                number: 100,
-                isOk: true,
-                string: 'My name is Ilnaz'
-            },
-
-            methods: {
-                sayHello() {
-                    return "Hello";
-                }
+                url: 'http://google.com'
             }
         });
     </script>
