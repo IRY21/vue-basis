@@ -7,8 +7,14 @@
 <body>
     
     <div id="app">
-        <input type="text" @input="changeName">
-        <h1>Hello {{ name }}</h1>
+        <h1>String: {{ name }}</h1>
+        <h2>Sum (10 + 60): {{ 10 + 60 }}</h2>
+        <h2>Number: {{ number }}</h2>
+        <h3>Method: {{ sayHello() }}</h3>
+        <h3>If statement: {{ isOk ? 'I am OK' : 'i am not OK' }}</h3>
+        <h3>Functions: {{ string.split('').reverse().join('') }}</h3>
+
+        <p> .. </p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -17,12 +23,15 @@
             el: '#app',
 
             data: {
-                name: 'Vue!'
+                name: 'Vue!',
+                number: 100,
+                isOk: true,
+                string: 'My name is Ilnaz'
             },
 
             methods: {
-                changeName(e) {
-                    this.name = e.target.value;
+                sayHello() {
+                    return "Hello";
                 }
             }
         });
