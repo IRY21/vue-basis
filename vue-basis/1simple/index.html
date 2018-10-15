@@ -7,13 +7,9 @@
 <body>
     
     <div id="app">
-        <h2>Счетчик: {{ counter }}</h2>
-        <button @click="upCounter">Увеличить</button>
-
-        <hr>
-
-        <h2 @mouseover="onHover">Счетчик 2: {{ counter2 }}</h2>
-        <button @click="counter2++">Увеличить</button>
+        <h2>{{ title }}: {{ counter }}</h2>
+        <button @click="upCounter(5, 'Изменено на 5', $event)">Увеличить на 5</button>
+        <button @click="upCounter(10, 'Изменено на 10', $event)">Увеличить на 10</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -22,14 +18,18 @@
             el: '#app',
             data: {
                 counter: 0,
-                counter2: 0
+                title: 'Счетчик'
             },
             methods: {
-                upCounter() {
-                    this.counter++;
-                },
-                onHover(e) {
-                    e.target.style.color = 'tomato';
+                upCounter(num, str, event) {
+                    this.counter += num;
+                    this.title = str;
+
+                    if (num === 5) {
+                        event.target.style.color = 'blue';
+                    } else if (num === 10) {
+                        event.target.style.color = 'red';
+                    }
                 }
             }
         });
