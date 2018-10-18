@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+</head>
+<body>
+    <div id="app">
+        <Counter v-for="c in 2"></Counter>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+
+        var dataObj = {
+            counter: 0
+        }
+
+        Vue.component('Counter', {
+            template: `
+                <div style="padding: 10px; border: 1px solid #000;">
+                    <h2>Counter {{ counter }}</h2>
+
+                    <button @click="add">Rise</button>
+                </div>
+            `,
+            data() {
+                // return dataObj;
+                return {
+                    counter: 0
+                }
+            },
+            methods: {
+                add() {
+                    this.counter++;
+                }
+            }
+        });
+
+        new Vue({
+            el: '#app'
+        });
+    </script>
+</body>
+</html>
