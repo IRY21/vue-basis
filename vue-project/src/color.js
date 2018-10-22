@@ -1,10 +1,12 @@
 export default {
     bind(el, bindings, vnode) {
-        console.log('bind');
-        el.style.color = 'blue';
-    },
+        /* console.log('bind');
+        el.style.color = 'blue'; */
 
-    inserted(el, bindings, vnode) {
+        el.style.color = bindings.value;
+    }
+
+    /* inserted(el, bindings, vnode) {
         console.log('inserted');
     },
 
@@ -18,5 +20,5 @@ export default {
 
     unbind() {
         console.log('unbind');
-    }
+    } */
 };
