@@ -1,19 +1,24 @@
 <template>
     <div>
-        <h2>Car</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloribus!</p>
+        <slot name="title"></slot>
+
+        <hr>
+        <hr>
+
+        <slot name="text"></slot>
     </div>
 </template>
 
 <script>
-
-export default {
-    
-}
+export default {};
 </script>
 
 <style scoped>
-    div {
-        border: 1px solid #000;
-    }
+div {
+  padding: 10px;
+  border: 1px solid #000;
+}
+h2 {
+  color: red;
+}
 </style>
