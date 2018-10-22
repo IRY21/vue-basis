@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { eventEmitter } from './main'
+
 export default {
     //props: ['carName', 'carYear'],
     /* props: {
@@ -22,7 +24,6 @@ export default {
             default: 'Default name'
         },
         carYear: Number,
-        counter: Number,
         changeFunc: Function
     },
 
@@ -32,7 +33,7 @@ export default {
             this.$emit('nameChanged', this.carName);
         },
         updateCounter() {
-            this.$emit('updateCounter', ++this.counter);
+            eventEmitter.$emit('updateCounter', 3);
         }
     },
 
