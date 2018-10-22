@@ -16,7 +16,7 @@ import Car from './Car.vue'
 export default {
   data () {
     return {
-      carName: 'Tesla from Elon',
+      carName: 'Tesla',
       carYear: 2018
     }
   },
