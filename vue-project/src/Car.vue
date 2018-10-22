@@ -1,52 +1,19 @@
 <template>
-    <div class="car">
-        <h3>Name: {{ carName }} \ {{ reverseName }}</h3>
-        <p>Year: {{ carYear }}</p>
-        <button @click="changeName">Change name</button>
-        <button @click="changeFunc">Change from parent</button>
-        <button @click="updateCounter">Update counter</button>
+    <div>
+        <h2>Car</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloribus!</p>
     </div>
 </template>
 
 <script>
-import { eventEmitter } from './main'
 
 export default {
-    //props: ['carName', 'carYear'],
-    /* props: {
-        carName: String,
-        carYear: Number,
-    }, */
-    props: {
-        carName: {
-            type: String,
-            required: true,
-            default: 'Default name'
-        },
-        carYear: Number,
-        changeFunc: Function
-    },
-
-    methods: {
-        changeName() {
-            this.carName = 'Mazda';
-            this.$emit('nameChanged', this.carName);
-        },
-        updateCounter() {
-            eventEmitter.$emit('updateCounter', 3);
-        }
-    },
-
-    computed: {
-        reverseName() {
-            return this.carName.split('').reverse().join('');
-        }
-    }
+    
 }
 </script>
 
 <style scoped>
-    .car {
+    div {
         border: 1px solid #000;
     }
 </style>
