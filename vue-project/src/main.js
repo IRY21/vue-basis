@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
-import ColorDirective from './color'
+import store from './store'
 
-Vue.directive('colored', ColorDirective);
-
-new Vue({ 
+new Vue({
   el: '#app',
+  store,
   render: h => h(App)
-})
+});

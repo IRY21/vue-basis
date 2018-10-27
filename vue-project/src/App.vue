@@ -1,28 +1,32 @@
 <template>
-  <div>
-      <h2 v-colored:background.font="'red'">{{ title }}</h2>
-      <h2 v-colored:color.delay.font="'blue'">{{ title }}</h2>
-  
-      <h2 v-font>Local font directive</h2>
+  <div class="container text-center pt-5">
+    <h1>{{ title }}</h1>
+    <hr>
+    <appCounter></appCounter>
+    <appSecondCounter></appSecondCounter>
+    <hr>
+    <appActions></appActions>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      title: "Hello I am Vue!"
-    };
-  },
+  import Counter from './Counter';
+  import SecondCounter from './SecondCounter';
+  import Actions from './Actions';
 
-  directives: {
-    font: {
-      bind(el, bindings, vnode) {
-        el.style.fontSize = '40px';
+  export default {
+    components: {
+      appCounter: Counter,
+      appSecondCounter: SecondCounter,
+      appActions: Actions
+    },
+
+    computed: {
+      title() {
+        return this.$store.getters.title;
       }
     }
-  }
-};
+  };
 </script>
 
 <style scoped>
